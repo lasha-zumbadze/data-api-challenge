@@ -26,6 +26,8 @@ export default function Popup() {
 
   function handleLogUout() {
     localStorage.removeItem("loggedIn");
+    localStorage.removeItem("uploadedImage");
+    localStorage.removeItem("userName");
   }
 
   return (
