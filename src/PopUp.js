@@ -24,6 +24,10 @@ export default function Popup() {
       .addEventListener("click", handlePopUpCancel);
   }, []);
 
+  function handleLogUout() {
+    localStorage.removeItem("loggedIn");
+  }
+
   return (
     <>
       <div className="modal hidden">
@@ -41,6 +45,7 @@ export default function Popup() {
 
           <Link to={"/login"}>
             <button
+              onClick={handleLogUout}
               style={{ backgroundColor: "#4980c0", width: "20rem" }}
               className="btn popup-btn"
             >

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Image from "./Img";
 
-export default function LogIn() {
+export default function LogIn({ setLoggedIn, loggedIn }) {
   const [upload, setUpload] = useState(
     localStorage.getItem("uploadedImage") ? true : false
   );
@@ -43,6 +43,11 @@ export default function LogIn() {
     setFilled(e.target.value ? true : false);
     setUserName(e.target.value);
     localStorage.setItem("userName", e.target.value);
+  }
+
+  function handleLogIn() {
+    setLoggedIn(true);
+    console.log(loggedIn);
   }
 
   return (
@@ -103,6 +108,7 @@ export default function LogIn() {
         />
         <Link to="/form">
           <button
+            onClick={handleLogIn}
             className="btn sign-in"
             style={disabled ? { filter: "grayscale(1)" } : {}}
             disabled={disabled}

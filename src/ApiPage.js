@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import VideoBackground from "./VideoBakcground";
 
-export default function ApiPage() {
+export default function ApiPage({ setLoggedIn }) {
   const [isLoading, setIsLoading] = useState(false);
   const [countriesData, setCountriesData] = useState([]);
   const [curPage, setCurrPage] = useState(1);
