@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+პროექტი შედგება 4 გვერდისგან
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- landing
+- ავტორიზაცია
+- form
+- API
 
-## Available Scripts
+პროექტი შევქმენი creat react app მეთოდით.
 
-In the project directory, you can run:
+ბიბლიოთეკებიდან გამოვიყენე react router გვერდებისთვის.
 
-### `npm start`
+# ავტორიზაციის გვერდი
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ავტორიზაციის გვერდზე არის სურათის ატვირთვისა და იუზერის სახელის ჩაწერის ფორმა.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ორივე ველი სავალდებულოა
 
-### `npm test`
+- თუ რომელიმე არაა შევსებული, submit ღილაკი ჩამქვრალია და ფუნქციონალიც არ იმუშავებს
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- შეყვანილი მონაცემები დამახსოვრდება და ყოველი დარეფრეშებისას ან log out-ის დროს ავტომატურად იქნება შეყვანილი.
 
-### `npm run build`
+- სურათის ატვირთვა რამდენჯერაც გვინდა იმდენჯერაა შესაძლებელი, რისთვისაც უბრალოდ ფოტოს ატვირთვის ველზე ვაჭერთ. მაშინაც, თუკი თავიდან გვინდა სხვა ფოტოს ატვირთვა
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# ფორმის გვერდი
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ამ გვერდზე ცხრილში გამოტანილი ინფორმაცია მოვაფიქრებინე chatGPT-ს. სულ არის 57 მონაცემი
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- შესაძლებელია მონაცემების ფილტრაცია სქესისა და სტატუსი მიხედვით აბსოლუტურად ყველა კომბინაციით. ამისთვის საჭიროა filter ღილაკზე დაჭერა და გამოჩნდება ფილტრაციის ველები. დეფოლტად შევსებულია აქტიური და არაქტიური. სქესის სექციის გასახსნელად საჭიროა მასზე დაჭერა და ჩამოიშლება.
 
-### `npm run eject`
+- ფილტრაციის ველის გასაქრობად ისევ filter ღილაკზე ვაჭერთ
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- სორტირების ღილაკებიც (ქულების ველში) მხოლოდ დიზაინისთვის იყო, მაგრამ ფუნქციონალიც დავამატე და შესაძლებელია თითოეული გაფილტრული თუ გაუფილტრავი მონაცემისთვის ქულების მიხედვით სორტირება
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- საძიებო ველი მხოლოდ დიზაინისთვის იყო, თუმცა ფუნქციონალი მაინც დავამატე და შესაძლებელია კონკრეტული სტუდენტის მოძებნაც და ამის მიხედვით ფილტრაციაც და სორტირებაც.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- იმ შემთხვევაში, თუკი მონაცემების რაოდენობა 10-ს არ აღემატება, ავტომატურად ცხრილი არის მხოლოდ ერთ გვერდიანი და სხვა გვერდები არც ჩანს და არც ისრებია მოცემული.
+  როგორც კი მონაცემები 10-ს გადააჭარბებს გამოჩნდება პეგინეიშენის სხვა გვერდებიც.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- გვერდებზე გადასვლა შეგვიძლია როგორც კონკრეტული გვერდის შესაბამის ციფრზე დაჭერით, ისე ისრებით.
 
-## Learn More
+- თითო ისარი გადადის ერთით შემდეგ ან წინა გვერდზე. ორ-ორი ისარი გადადის საწყის და საბოლოო გვერდებზე.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# API გვერდი
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- ამ გვერდზე წამოღებულია ინფორმაცია ქვეყნების შესახებ და ამის მიხედვით თითოეული ქვეყნისთვის გამოტანილია პატარა card-ები.
 
-### Code Splitting
+- ქვეყნების გამოტანა შესაძლებელია რეგიონების მიხედვით, რასაც ვირჩევთ select ღილაკიდან. დეფოლტად გამოდის ევროპის ქვეყნები.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- ასევე შესაძლებელია კონკრეტული ქვეყნის მოძებმა საძიებო ველში ჩაწერით.
 
-### Analyzing the Bundle Size
+- აქაც გვაქვს პეგინეიშენი. თითო გვერდზე არის 10 ქვეყანა.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# ნავიგაცია
 
-### Making a Progressive Web App
+- ნავიგაციის ნაწილში მოცემულია form და API გვერდებზე გადასვლის ღილაკები
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- ასევე აქ ავტომატურად წამოვა ავტორიზაციისას შეყვანილი სახელი და ფოტო.
 
-### Advanced Configuration
+- ფოტოზე დაჭერისას გამოვა popup. მისი გათიშვა შეგვიძლია cancel ღილაკზე დაჭერით, escape ღილაკზე დაჭერით, ან popup-ის იქით სადმე დაწკაპუნებით.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- იმ შემთხვევაში თუ დავაჭერთ log out-ს ავტომატურად დავბრუნდებით ავტორიზაციის გვერდზე.
