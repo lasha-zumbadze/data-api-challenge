@@ -9,7 +9,7 @@ export default function ApiPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [countriesData, setCountriesData] = useState([]);
   const [curPage, setCurrPage] = useState(1);
-  const resultsPerPage = 10;
+  const resultsPerPage = 8;
   const pageNum = Math.ceil(countriesData.length / resultsPerPage);
 
   const [uploadedImage, setUploadedImage] = useState("");
@@ -75,7 +75,7 @@ export default function ApiPage() {
         }
       }
 
-      if (selectCountry && selectCountry.length < 2) {
+      if (selectCountry && selectCountry.length < 3) {
         setCountriesData([]);
         return;
       }
@@ -129,6 +129,7 @@ export default function ApiPage() {
           curPage={curPage}
           resultsPerPage={resultsPerPage}
         />
+
         <Pagination
           pageNum={pageNum}
           countriesData={countriesData}
